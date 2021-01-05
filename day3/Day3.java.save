@@ -1,0 +1,39 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
+
+public class Day3 {
+	public static void main(String[] args) {
+		try {
+			File obj = new File("input.txt");
+			Scanner sc = new Scanner(obj);
+			int right = 3, down = 0, trees_count = 0;
+
+			sc.nextLine();
+			while(sc.hasNextLine()) {
+				down += right;
+				String str = sc.nextLine();
+
+				if(str.length() -1 < down)
+					down -= str.length() - 1;
+..##.......
+#...#...#..
+.#....#..#.
+..#.#...#.#
+.#...##..#.
+..#.##.....
+.#.#.#....#
+.#........#
+#.##...#...
+#...##....#
+.#..#...#.#
+				if(str.charAt(down) == '#')
+					trees_count++;
+			}
+			System.out.println(trees_count);
+			sc.close();
+		} catch(FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+}
