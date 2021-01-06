@@ -26,7 +26,7 @@ public class Day3 {
 					if(str.charAt(down) == '#')
 						trees_count++;
 				}
-System.out.println(trees_count);
+        System.out.println(trees_count);
 				result *= trees_count;
 				sc.close();
 			}
